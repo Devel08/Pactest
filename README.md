@@ -3,7 +3,7 @@ A tool for arch linux written in rust that shows all locally downloaded packages
 This tool does similiary to what signoff -l does
 
 usage is:
-pactest --db DB
+pactest --db DB </br>
 DB can be:
 core-testing
 extra-testing
