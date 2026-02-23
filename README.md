@@ -1,6 +1,6 @@
 # Pactest
 A tool for arch linux written in rust that shows all locally downloaded packages that are present in the testing respositories.
-This tool does similiary to what signoff -l does
+This tool does similiary to what signoff -i does
 
 usage is:
 pactest --db DB </br>
