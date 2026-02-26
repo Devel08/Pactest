@@ -12,7 +12,7 @@ struct Cli {
 
 fn main() {
 
-        let handle = Alpm::new("/var/lib/pacman", "/var/lib/pacman").unwrap();
+    let handle = Alpm::new("/var/lib/pacman", "/var/lib/pacman").unwrap();
     let mut cli = Cli::parse();
 
     let db_count = cli.db.len();
@@ -70,8 +70,13 @@ fn main() {
             // print only explititly intalled packages
             if pkg.reason() == PackageReason::Explicit {
                 for localpkg in handle.localdb().pkgs() {
-                    if localpkg.name() == pkg.name() {
-                        println!("{} {} => {} {}", localpkg.name(), localpkg.version(), pkg.name(), pkg.version());
+                    if localpkg.name() == pkg.name()  {
+                        if localpkg.version() != pkg.version() {
+                            println!("{} {} => {} {}", localpkg.name(), localpkg.version(), pkg.name(), pkg.version());
+                        }
+                        else {
+                            println!("{} {} already up to date on local system.", pkg.name(), pkg.version());
+                        }
                     }
                 }
             }
