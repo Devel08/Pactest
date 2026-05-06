@@ -8,3 +8,4 @@ alpm = "5.0.2"
 alpm-utils = "5.0.0"
 alpm-sys =  "5.0.1"
 clap = { version = "4.5.60", features = ["derive"] }
+pacmanconf = "=3.1.0"
